@@ -3,15 +3,15 @@
 #*******************************************#
 #Author:                AquaPluto
 #Email:                 wujunlinq@163.com
-#Date:                  2023-6-25
+#Date:                  2024-12-20
 #FileName:              install_docker.sh
 #Blog:                  https://blog.csdn.net/m0_75233142
 #Github:                https://github.com/AquaPluto
 #Description:           安装docker
 #******************************************#
 
-DOCKER_VERSION="27.4.0"
-#DOCKER_VERSION="26.1.4"
+DOCKER_VERSION="27.4.0"   # ubuntu20.04最新为27.4.1
+#DOCKER_VERSION="26.1.3"  # Rocky8最新
 DOCKER_URL="http://mirrors.ustc.edu.cn"
 #DOCKER_URL="https://mirrors.aliyun.com"
 #DOCKER_URL="https://mirrors.tuna.tsinghua.edu.cn"
@@ -23,6 +23,8 @@ END="\033[m"
 
 . /etc/os-release
 UBUNTU_DOCKER_VERSION="5:${DOCKER_VERSION}-1~${ID}.${VERSION_ID}~${UBUNTU_CODENAME}"
+CENTOS_DOCKER_CE_VERSION="3:${DOCKER_VERSION}-1.el8"
+CENTOS_DOCKER_CE_CLI_VERSION="1:${DOCKER_VERSION}-1.el8"
 
 color () {
     RES_COL=60
@@ -71,10 +73,10 @@ EOF
 	    yum clean all 
         ${COLOR_FAILURE} "Docker有以下版本"${END}
         yum list docker-ce --showduplicates
-        ${COLOR_FAILURE}"5秒后即将安装: docker-"${DOCKER_VERSION}" 版本....."${END}
+        ${COLOR_FAILURE}"5秒后即将安装: docker-"${CENTOS_DOCKER_VERSION}" 版本....."${END}
         ${COLOR_FAILURE}"如果想安装其它Docker版本，请按ctrl+c键退出，修改版本再执行"${END}
         sleep 5
-        yum -y install docker-ce-$DOCKER_VERSION docker-ce-cli-$DOCKER_VERSION  \
+        yum -y install docker-ce-$CENTOS_DOCKER_CE_VERSION docker-ce-cli-$CENTOS_DOCKER_CE_CLI_VERSION --allowerasing  \
             || { color "Base,Extras的yum源失败,请检查yum源配置" 1;exit; }
     else
         dpkg -s docker-ce &> /dev/null && $COLOR"Docker已安装，退出" 1 && exit
