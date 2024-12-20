@@ -1,4 +1,15 @@
 #!/bin/bash
+#
+#*******************************************#
+#Author:                AquaPluto
+#Email:                 wujunlinq@163.com
+#Date:                  2023-1-20
+#FileName:              reset.sh
+#Blog:                  https://blog.csdn.net/m0_75233142
+#Github:                https://github.com/AquaPluto
+#Description:           系统初始化
+#******************************************#
+
 menu(){
 	while true ; do	
 		echo -en "\E[$[RANDOM%7+31];1m"
