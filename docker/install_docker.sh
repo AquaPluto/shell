@@ -24,6 +24,7 @@ END="\033[m"
 . /etc/os-release
 UBUNTU_DOCKER_VERSION="5:${DOCKER_VERSION}-1~${ID}.${VERSION_ID}~${UBUNTU_CODENAME}"
 
+
 color () {
     RES_COL=60
     MOVE_TO_COL="echo -en \\033[${RES_COL}G"
