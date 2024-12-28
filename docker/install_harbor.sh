@@ -151,6 +151,7 @@ install_docker_compose(){
     fi
 }
 
+
 install_harbor(){
     ${COLOR_SUCCESS}"开始安装 Harbor....."${END}
     sleep 1
