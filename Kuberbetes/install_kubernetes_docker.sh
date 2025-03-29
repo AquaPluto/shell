@@ -8,7 +8,7 @@
 #Blog:                  https://blog.csdn.net/m0_75233142
 #Github:                https://github.com/AquaPluto
 #Description:           基于kubeadm的安装方式实现Kubernetes的初始准备到安装的全过程
-#******************************************#
+#*******************************************#
 
 #执行前准备:
 #必须确保安装Kubernetes的主机内存至少2G
