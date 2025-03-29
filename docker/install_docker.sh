@@ -8,7 +8,7 @@
 #Blog:                  https://blog.csdn.net/m0_75233142
 #Github:                https://github.com/AquaPluto
 #Description:           安装docker
-#******************************************#
+#*******************************************#
 
 DOCKER_VERSION="27.4.0"   # ubuntu20.04最新为27.4.1
 #DOCKER_VERSION="26.1.3"  # Rocky8最新
